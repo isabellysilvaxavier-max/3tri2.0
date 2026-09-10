@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hub de Mídias</title>
+    <link rel ="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Hub de Mídias</h1>
+        <p>Gerenciador de jogos, filmes e Séries</p>
+    </header>
+    <main class="container">
+        <section class="painel_cadastro">
+            <h2>Adicionar á Lista d Mídia</h2>
+            <for action=""id="form_midia">
+                <input type="text" id="titulo" placeholder="Ex: pou" required>
+                <select id="categoria" required>
+                    <option value="categoria">categoria</option>
+                    <option value="Jogos">Jogos</option>
+                   <option value="Filmes">Filmes</option>
+                   <option value="Series">Séries</option>
+                </select>
+                <input type="text" id="plataforma" placeholder="Ex:netflix, app store">
+                <input type="text" id="nota" step="0.1" min="0" required>
+                max="9.5" placeholder="Ex:0 a 9.5"required>
+            </for>
+        </section>
+        <section class="painel-catalogo">
+            <div class="filtros">
+                <button>Todos</button>
+                <button>Jogos</button>
+                <button>Filmes</button>
+                <button>Séries</button>
+          
+            </div>
+            <div id="catalogo-grid" class="grid">
+        <!--os card serão exibidos aqui-->
+        </div>
+        </section>
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>

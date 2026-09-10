@@ -1,18 +1,65 @@
 [
     {
         "id":1,
-        "titulo":"Homem-aranha: sem volta pra casa",
-        "categoria":,
-        "plataforma":,
-        "nota":,
-        "status":,
-        "capa":
-    }
-]
-"id":,
-        "titulo":,
-        "categoria":,
-        "plataforma":,
-        "nota":,
-        "status":,
-        "capa":
+        "titulo":"Barbi Escola de princesa",
+        "categoria":"filme",
+        "plataforma":"youtube",
+        "nota":9,
+        "status":"assisti",
+        "capa":"https://m.media-amazon.com/images/M/MV5BMmM5MjNjNzUtZDdlMC00MDU4LWE3MjEtN2EyYWU4ZWUxZTgyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+    
+    },
+
+{
+
+
+         "id":2,
+        "titulo":"Alice no pais das maravilhas",
+        "categoria":"filme",
+        "plataforma":"Disney",
+        "nota":9.5,
+        "status":"assisti",
+        "capa":"https://pt.wikipedia.org/wiki/Alice_no_Pa%C3%ADs_das_Maravilhas_%28filme_de_2010%29"
+},
+{
+"id":3,
+        "titulo":"Stranger things",
+        "categoria":"serie",
+        "plataforma":"nexflix",
+        "nota":8,
+        "status":"assistindo",
+        "capa":"https://www.imdb.com/pt/title/tt4574334/"
+
+        },
+        {
+        "id":4,
+           
+            "titulo":"Anne with an E",
+        "categoria":"serie",
+        "plataforma":"nexflix",
+        "nota":9.8,
+        "status":"assisti",
+        "capa":"https://www.adorocinema.com/series/serie-20175/"
+        },
+{
+        "id":5,
+        "titulo":"pou",
+        "categoria":"jogo",
+        "plataforma":"app store",
+        "nota":10,
+        "status":"joguei",
+        "capa":"https://pt.wikipedia.org/wiki/Pou"
+    },
+
+{
+    "id":6,
+    "titulo":"subway surfers",
+    "categoria":"jogo",
+    "plataforma":"app store",
+    "nota":10,
+    "status":"joguei",
+    "capa":"https://poki.com/br/g/subway-surfers"
+
+}
+
+    ]
