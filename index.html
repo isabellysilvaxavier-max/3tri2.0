@@ -12,9 +12,9 @@
         <p>Gerenciador de jogos, filmes e Séries</p>
     </header>
     <main class="container">
-        <section class="painel_cadastro">
-            <h2>Adicionar á Lista d Mídia</h2>
-            <for action=""id="form_midia">
+        <section class="painel-cadastro">
+            <h2>Adicionar á Lista de Mídia</h2>
+            <for action=""id="form-midia">
                 <input type="text" id="titulo" placeholder="Ex: pou" required>
                 <select id="categoria" required>
                     <option value="categoria">categoria</option>
@@ -23,9 +23,11 @@
                    <option value="Series">Séries</option>
                 </select>
                 <input type="text" id="plataforma" placeholder="Ex:netflix, app store">
-                <input type="text" id="nota" step="0.1" min="0" required>
+                <input type="number" id="nota" step="0.1" min="0" 
                 max="9.5" placeholder="Ex:0 a 9.5"required>
+                <button type= "submit" class="btn-salvar">Adicionar</button>
             </for>
+
         </section>
         <section class="painel-catalogo">
             <div class="filtros">
