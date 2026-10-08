@@ -14,10 +14,11 @@
     <main class="container">
         <section class="painel-cadastro">
             <h2>Adicionar á Lista de Mídia</h2>
-            <for action=""id="form-midia">
+            
+            <form action=""id="form-midia" onsubmit="adicionarItem(event)">
                 <input type="text" id="titulo" placeholder="Ex: pou" required>
                 <select id="categoria" required>
-                    <option value="categoria">categoria</option>
+                    <option value="">categoria</option>
                     <option value="Jogos">Jogos</option>
                    <option value="Filmes">Filmes</option>
                    <option value="Series">Séries</option>
@@ -26,7 +27,7 @@
                 <input type="number" id="nota" step="0.1" min="0" 
                 max="9.5" placeholder="Ex:0 a 9.5"required>
                 <button type= "submit" class="btn-salvar">Adicionar</button>
-            </for>
+            </form>
 
         </section>
         <section class="painel-catalogo">

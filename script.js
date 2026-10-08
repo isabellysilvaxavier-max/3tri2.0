@@ -21,18 +21,29 @@ try{
 }
 
 //Métodos POST
- async function adicionarIntem(event){
+ async function adicionarItem(event){
     event.preventDefault();
 
     const novoItem ={
-        id:,
-        titulo:,
-        categoria:,
-        plataforma:,
-        nota:,
-        status:,
+        id: Date.now(),
+        titulo: document.getElementById('titulo').value,
+        categoria: document.getElementById('categoria').value,
+        plataforma: document.getElementById('plataforma').value,
+        nota: parseFloat (document.getElementById('nota').value),
+        status: "jogando"
+    };
+    try{
+        colecaoMidia.push(novoItem);
+        renderizarGrid(colecaoMidia);
+
+        document.getElementById('form-midia').reset();
+        alert('Item adicionado á lista com sucesso!')
+    }catch(erro){ 
+        alert("Erro ao enviar requisição")//POST
+
     }
- }
+    }
+ 
 function renderizarGrid(lista){
     const container = document.getElementById('catalogo-grid');
     container.innerHTML = '';
@@ -47,12 +58,12 @@ lista.forEach(item => {
     card.className = 'card';
 
     card.innerHTML =`
-    ${item.capa?`<img src="${item.capa}" alt="${item.titulo}" class="capa-midia"`:''}
+    ${item.capa?`<img> src="${item.capa}" alt="${item.titulo}" class="capa-midia"`:''}
     <div>
-        <span class= "tag-catgoria">${item.categoria}</span>
+        <span class= "tag-categoria">${item.categoria}</span>
         <h3>${item.titulo}</h3>
-        <p clas="info">plataforma:${item.plataorma}</p>
-        <p cla="info">Nota:<span class="nota">${item.nota.toFixed(1)}</span></p>
+        <p class="info">Plataforma:${item.plataforma}</p>
+        <p class="info">Nota:<span class="nota">${item.nota.toFixed(1)}</span></p>
         <p class="info">Status: <strong>${item.status}</strong></p>
 
         
@@ -66,4 +77,4 @@ lista.forEach(item => {
 });
 }
 //Excuta a unção e carregarCatalogo quando inicia a página
-document.addEventListener('DOMContLoaded',carregarCatalogo);
+document.addEventListener('DOMContentLoaded',carregarCatalogo);

@@ -38,7 +38,7 @@ header h1{
     background: #1e293b;
     padding: 20px;
     border-radius: 10px;
-    border: 1px solid #334155;
+    border-radius: 1px solid #334155;
 }
 .painel-cadastro h2{
     font-size: 1.2em;
