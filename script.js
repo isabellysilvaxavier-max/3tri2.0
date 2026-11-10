@@ -62,6 +62,10 @@ lista.forEach(item => {
     <div>
         <span class= "tag-categoria">${item.categoria}</span>
         <h3>${item.titulo}</h3>
+/*Metodo PATCH: Alertar o status, como jogando assistindo, etc...*/
+async function 
+    
+}
         <p class="info">Plataforma:${item.plataforma}</p>
         <p class="info">Nota:<span class="nota">${item.nota.toFixed(1)}</span></p>
         <p class="info">Status: <strong>${item.status}</strong></p>
@@ -76,5 +80,36 @@ lista.forEach(item => {
     
 });
 }
-//Excuta a unção e carregarCatalogo quando inicia a página
+//A partir de uma função assíncrona,crie uma
+//função responsável por deletar um item
+//utilizando a estrutura try...catch
+
+async function deletarItem(id){
+    try{
+        //pede confirmação antees de apagar
+        const confirmar = confirm("Tem certeza que quer deletar esse item?");
+        if (!confirmar) return;
+
+        //Acha a posição  do item na coleção
+        const indice =
+        colecaoMidia.findIndex(m => m.id === id);
+
+        if (indice === -1) return;
+
+        //Remove o item da coleção
+        colecaoMidia.splice(indice,1);
+        
+        //Atualiza a tela 
+        renderizarGrid(colecaoMidia);
+
+        alert("Item deletado com sucesso!");
+    } catch (erro){
+        alert("Érro ao deletar o item");
+    }
+}
+
+
+
+//Excuta a função e carregarCatalogo quando inicia a página
 document.addEventListener('DOMContentLoaded',carregarCatalogo);
+
