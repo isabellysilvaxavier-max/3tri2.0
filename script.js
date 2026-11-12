@@ -42,8 +42,7 @@ try{
         alert("Erro ao enviar requisição")//POST
 
     }
-    }
- 
+
 function renderizarGrid(lista){
     const container = document.getElementById('catalogo-grid');
     container.innerHTML = '';
@@ -62,10 +61,6 @@ lista.forEach(item => {
     <div>
         <span class= "tag-categoria">${item.categoria}</span>
         <h3>${item.titulo}</h3>
-/*Metodo PATCH: Alertar o status, como jogando assistindo, etc...*/
-async function 
-    
-}
         <p class="info">Plataforma:${item.plataforma}</p>
         <p class="info">Nota:<span class="nota">${item.nota.toFixed(1)}</span></p>
         <p class="info">Status: <strong>${item.status}</strong></p>
@@ -79,37 +74,51 @@ async function
     container.appendChild(card);
     
 });
-}
-//A partir de uma função assíncrona,crie uma
-//função responsável por deletar um item
-//utilizando a estrutura try...catch
+} async function deletarItem(id)
+{ try{ 
+    
+// pede confirmação antees de apagar
+ const confirmar = confirm("Tem certeza que quer deletar esse item?");
+  if (!confirmar) return;
 
-async function deletarItem(id){
-    try{
-        //pede confirmação antees de apagar
-        const confirmar = confirm("Tem certeza que quer deletar esse item?");
-        if (!confirmar) return;
+   //Acha a posição  do item na coleção 
+   const indice = colecaoMidia.findIndex(m => m.id === id); if (indice === -1) return; 
 
-        //Acha a posição  do item na coleção
-        const indice =
-        colecaoMidia.findIndex(m => m.id === id);
+   //Remove o item da coleção 
+   colecaoMidia.splice(indice,1);
 
-        if (indice === -1) return;
-
-        //Remove o item da coleção
-        colecaoMidia.splice(indice,1);
-        
-        //Atualiza a tela 
-        renderizarGrid(colecaoMidia);
-
-        alert("Item deletado com sucesso!");
-    } catch (erro){
-        alert("Érro ao deletar o item");
-    }
-}
+    //Atualiza a tela 
+    renderizarGrid(colecaoMidia);
+     alert("Item deletado com sucesso!"); 
+    } catch (erro){ 
+        alert("Érro ao deletar o item"); } }
 
 
+//A partir de uma função assíncrona, crie uma 
+//função responsavel por deçetar um item 
+//ultilzando a estrutura try...catch
 
 //Excuta a função e carregarCatalogo quando inicia a página
 document.addEventListener('DOMContentLoaded',carregarCatalogo);
 
+    
+   /*Metodo PATCH: Alterar o status, como jogando assistido, etc...*/
+   async function alterarStatus(id){ 
+    const item = colecaoMidia.find(m => m.id === id);
+    if (!item) return;
+
+
+    //Alterar o status sequencialmente
+    const statuOpecoes = ["jogar","jogando","jogado","Assistir","assistindo"];
+    const proximoStatus = statuOpecoes[(statuOpecoes.indexOf(item.status)+1)%statuOpecoes.length];
+
+    try{
+        item.status = proximoStatus;
+        renderizarGrid(colecaoMidia);
+    }catch(erro){
+        alert("Erro ao atualizar o status");
+    }
+    }
+   //executa a função de carregarCatalogo quando inicia a página
+   document.addEventListener('DOMContentLoaded', carregarCatalogo);
+}
